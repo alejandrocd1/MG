@@ -1,3 +1,4 @@
+let showSolution = false;
 let points = [];
 let selected = null;
 
@@ -8,8 +9,8 @@ function setup() {
   points.push({ x: 0, y: 2, fixed: true });
 
   // Puntos iniciales
-  points.push({ x: 1, y: 1 });
-  points.push({ x: 2, y: 0.5 });
+  points = [];
+  points.push({ x: 0, y: 2, fixed: true });
 }
 
 function draw() {
@@ -19,7 +20,9 @@ function draw() {
   scale(50, -50);
 
   drawAxes();
+  if (showSolution) {
   drawRealFunction();
+}
   drawStudentCurve();
   drawPoints();
 }
@@ -55,7 +58,7 @@ function drawStudentCurve() {
   // Simetría automática
   for (let i = sorted.length - 1; i >= 0; i--) {
     let p = sorted[i];
-    if (p.x !== 0) vertex(-p.x, p.y);
+    if (p.x !== 0) curveVertex(p.x, p.y);
   }
 
   endShape();
@@ -94,4 +97,9 @@ function mouseDragged() {
 
 function mouseReleased() {
   selected = null;
+}
+function keyPressed() {
+  if (key === 's') {
+    showSolution = !showSolution;
+  }
 }
