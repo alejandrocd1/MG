@@ -28,13 +28,13 @@ function draw() {
 }
 
 function drawAxes() {
-  stroke(150);
+  stroke(100);
   line(-width, 0, width, 0);
   line(0, -height, 0, height);
 }
 
 function drawRealFunction() {
-  stroke(0, 150, 255);
+  stroke(0, 100, 255);
   noFill();
   beginShape();
   for (let x = -10; x <= 10; x += 0.1) {
