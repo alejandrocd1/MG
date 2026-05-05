@@ -1,1 +1,105 @@
+let line1 = [];
+let line2 = [];
 
+let selected = null;
+let currentLine = 1;
+
+function setup() {
+  createCanvas(window.innerWidth, window.innerHeight);
+
+  // Recta 1: y = x
+  line1.push({ x: -2, y: -2 });
+  line1.push({ x: 2, y: 2 });
+
+  // Recta 2: y = -0.9x + 1
+  line2.push({ x: -2, y: 2.8 });
+  line2.push({ x: 2, y: -0.8 });
+}
+
+function draw() {
+  background(20);
+
+  translate(width / 2, height / 2);
+  scale(50, -50);
+
+  drawAxes();
+
+  drawLine(line1, [0, 255, 100]);   // verde
+  drawLine(line2, [255, 150, 0]);   // naranja
+
+  drawPoints(line1);
+  drawPoints(line2);
+
+  drawIntersection();
+}
+
+function drawAxes() {
+  stroke(150);
+  line(-width, 0, width, 0);
+  line(0, -height, 0, height);
+}
+
+function drawLine(points, color) {
+  stroke(color);
+  strokeWeight(0.05);
+  line(points[0].x, points[0].y, points[1].x, points[1].y);
+}
+
+function drawPoints(points) {
+  fill(255);
+  noStroke();
+  for (let p of points) {
+    ellipse(p.x, p.y, 0.2);
+  }
+}
+
+function drawIntersection() {
+  let A = line1[0];
+  let B = line1[1];
+  let C = line2[0];
+  let D = line2[1];
+
+  let denom = (A.x - B.x) * (C.y - D.y) - (A.y - B.y) * (C.x - D.x);
+
+  if (denom === 0) return;
+
+  let x = ((A.x * B.y - A.y * B.x) * (C.x - D.x) - (A.x - B.x) * (C.x * D.y - C.y * D.x)) / denom;
+  let y = ((A.x * B.y - A.y * B.x) * (C.y - D.y) - (A.y - B.y) * (C.x * D.y - C.y * D.x)) / denom;
+
+  fill(255, 0, 0);
+  ellipse(x, y, 0.25);
+}
+
+function mousePressed() {
+  let mx = (mouseX - width / 2) / 50;
+  let my = -(mouseY - height / 2) / 50;
+
+  selected = null;
+
+  for (let p of line1) {
+    if (dist(mx, my, p.x, p.y) < 0.3) {
+      selected = p;
+      currentLine = 1;
+      return;
+    }
+  }
+
+  for (let p of line2) {
+    if (dist(mx, my, p.x, p.y) < 0.3) {
+      selected = p;
+      currentLine = 2;
+      return;
+    }
+  }
+}
+
+function mouseDragged() {
+  if (selected) {
+    selected.x = (mouseX - width / 2) / 50;
+    selected.y = -(mouseY - height / 2) / 50;
+  }
+}
+
+function mouseReleased() {
+  selected = null;
+}
