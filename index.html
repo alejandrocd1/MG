@@ -1,20 +1,81 @@
-index.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <title>Método Gráfico</title>
   <style>
-    body { margin: 0; background: #111; color: white; }
-    canvas { display: block; }
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    #top {
+      padding: 10px;
+      background: #222;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    #inputZone {
+      padding: 10px;
+      background: #333;
+      text-align: center;
+    }
+
+    #expression {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      margin: 3px;
+      padding: 8px;
+      font-size: 16px;
+    }
+
+    canvas {
+      display: block;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Librería p5.js -->
-  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+<div id="top">
+  x < -0.9x + 1
+</div>
 
-  <!-- Tu código -->
-  <script src="sketch.js"></script>
+<div id="inputZone">
+  <div id="expression"></div>
+
+  <div>
+    <button onclick="addSymbol('x')">x</button>
+    <button onclick="addSymbol('=')">=</button>
+    <button onclick="addSymbol('+')">+</button>
+    <button onclick="addSymbol('-')">-</button>
+    <button onclick="addSymbol('0.9')">0.9</button>
+    <button onclick="addSymbol('1')">1</button>
+    <button onclick="clearExpr()">C</button>
+  </div>
+</div>
+
+<script>
+let expr = "";
+
+function addSymbol(s) {
+  expr += s;
+  document.getElementById("expression").innerText = expr;
+}
+
+function clearExpr() {
+  expr = "";
+  document.getElementById("expression").innerText = "";
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+<script src="sketch.js"></script>
 
 </body>
 </html>
