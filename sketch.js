@@ -5,18 +5,22 @@ let selected = null;
 let currentLine = 1;
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  let canvas = createCanvas(window.innerWidth, window.innerHeight - 140);
+  canvas.parent(document.body);
 
-  // Recta 1: y = x
-  line1.push({ x: -2, y: -2 });
-  line1.push({ x: 2, y: 2 });
+  // Rectas iniciales
+  line1 = [
+    { x: -2, y: -2 },
+    { x: 2, y: 2 }
+  ];
 
-  // Recta 2: y = -0.9x + 1
-  line2.push({ x: -2, y: 2.8 });
-  line2.push({ x: 2, y: -0.8 });
+  line2 = [
+    { x: -2, y: 2.8 },
+    { x: 2, y: -0.8 }
+  ];
 }
 
-function draw() {
+function draw() {u
   background(20);
 
   translate(width / 2, height / 2);
