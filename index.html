@@ -32,7 +32,83 @@
 
       <!-- TECLADO -->
       <div id="keyboard">
-      <button onclick="toggleKeyboard()">Teclado</button>
+        
+  <!-- MENÚ -->
+  <div>
+
+    <button onclick="showSection('numbers')">
+      123
+    </button>
+
+    <button onclick="showSection('functions')">
+      f(x)
+    </button>
+
+    <button onclick="showSection('operators')">
+      +−
+    </button>
+
+  </div>
+
+  <!-- NÚMEROS -->
+  <div id="numbers" class="kbSection">
+
+    <button onclick="addSymbol('1')">1</button>
+    <button onclick="addSymbol('2')">2</button>
+    <button onclick="addSymbol('3')">3</button>
+
+    <button onclick="addSymbol('4')">4</button>
+    <button onclick="addSymbol('5')">5</button>
+    <button onclick="addSymbol('6')">6</button>
+
+    <button onclick="addSymbol('7')">7</button>
+    <button onclick="addSymbol('8')">8</button>
+    <button onclick="addSymbol('9')">9</button>
+
+    <button onclick="addSymbol('0')">0</button>
+    <button onclick="addSymbol('.')">.</button>
+
+  </div>
+
+  <!-- VARIABLES -->
+  <div id="functions" class="kbSection">
+
+    <button onclick="addSymbol('x')">x</button>
+    <button onclick="addSymbol('y')">y</button>
+
+    <button onclick="addSymbol('x²')">x²</button>
+
+    <button onclick="addSymbol('f(x)')">
+      f(x)
+    </button>
+
+  </div>
+
+  <!-- OPERADORES -->
+  <div id="operators" class="kbSection">
+
+    <button onclick="addSymbol('+')">+</button>
+    <button onclick="addSymbol('-')">−</button>
+
+    <button onclick="addSymbol('=')">=</button>
+
+    <button onclick="addSymbol('<')"><</button>
+    <button onclick="addSymbol('>')">></button>
+
+    <button onclick="addSymbol('/')">/</button>
+
+  </div>
+
+  <!-- CONTROL -->
+  <div>
+
+    <button onclick="backspace()">⌫</button>
+
+    <button onclick="clearExpr()">C</button>
+
+  </div>
+
+</div> 
 
       </div>
 
