@@ -1,141 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Método Gráfico</title>
-  <style>
-    body {
-      margin: 0;
-      background: #111;
-      color: white;
-      font-family: sans-serif;
-    }
 
-    #top {
-      padding: 10px;
-      background: #222;
-      text-align: center;
-      font-size: 20px;
-    }
-
-    #inputZone {
-      padding: 10px;
-      background: #333;
-      text-align: center;
-    }
-
-    #expression {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    button {
-      margin: 3px;
-      padding: 8px;
-      font-size: 16px;
-    }
-
-    canvas {
-      display: block;
-    }
-  </style>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div id="top"></div>
 
-<div id="work">
-  <div id="expression"></div>
-</div>
+  <!-- Enunciado -->
+  <div id="top"></div>
 
-<div id="canvasContainer"></div>
+  <!-- Desarrollo -->
+  <div id="work">
+    <div id="expression"></div>
 
-<div id="keyboard"></div>
-<div id="top">
-  x < -0.9x + 1
-</div>
-
-<div id="inputZone">
-  <div id="expression"></div>
-
-  <div>
-
-  <!-- Números -->
-  <div>
-    <button onclick="addSymbol('7')">7</button>
-    <button onclick="addSymbol('8')">8</button>
-    <button onclick="addSymbol('9')">9</button>
+    <button onclick="toggleKeyboard()">
+      Teclado
+    </button>
   </div>
 
-  <div>
-    <button onclick="addSymbol('4')">4</button>
-    <button onclick="addSymbol('5')">5</button>
-    <button onclick="addSymbol('6')">6</button>
-  </div>
+  <!-- Plano -->
+  <div id="canvasContainer"></div>
 
-  <div>
+  <!-- Teclado -->
+  <div id="keyboard">
+
     <button onclick="addSymbol('1')">1</button>
     <button onclick="addSymbol('2')">2</button>
     <button onclick="addSymbol('3')">3</button>
-  </div>
 
-  <div>
-    <button onclick="addSymbol('0')">0</button>
-    <button onclick="addSymbol('.')">.</button>
-  </div>
-
-  <!-- Variable -->
-  <div>
     <button onclick="addSymbol('x')">x</button>
-  </div>
 
-  <!-- Operadores -->
-  <div>
     <button onclick="addSymbol('+')">+</button>
     <button onclick="addSymbol('-')">-</button>
-  </div>
 
-  <!-- Relacionales -->
-  <div>
     <button onclick="addSymbol('=')">=</button>
-    <button onclick="addSymbol('<')"><</button>
-    <button onclick="addSymbol('>')">></button>
+
+    <button onclick="backspace()">⌫</button>
+
+    <button onclick="clearExpr()">C</button>
+
   </div>
 
-  <!-- Control -->
-  <div>
-  <button onclick="backspace()">⌫</button>
-  <button onclick="clearExpr()">C</button>
-</div>
+  <!-- Librería p5 -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 
-</div>
- 
-</div>
+  <!-- Scripts -->
+  <script src="js/editor.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/sketch.js"></script>
+  <script src="data/ejercicios.js"></script>
 
-<script>
-let expr = "";
-
-function addSymbol(s) {
-  expr += s;
-  document.getElementById("expression").innerText = expr;
-}
-
-function clearExpr() {
-  expr = "";
-  document.getElementById("expression").innerText = "";
-}
-function backspace() {
-  expr = expr.slice(0, -1);
-  document.getElementById("expression").innerText = expr;
-}
-</script>
-<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-<script src="sketch.js"></script>
-
-</script>
-<script src="js/editor.js"></script>
-<script src="js/ui.js"></script>
-<script src="js/sketch.js"></script>
-<script src="data/ejercicios.js"></script>
 </body>
+
 </html>
