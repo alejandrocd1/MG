@@ -102,3 +102,7 @@ button {
   padding: 10px 14px;
   font-size: 18px;
 }
+.kbSection {
+  display: none;
+  margin-top: 10px;
+}
