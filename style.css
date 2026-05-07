@@ -81,9 +81,11 @@ body {
 
 /* TECLADO */
 #keyboard {
+
   display: none;
 
   position: absolute;
+
   bottom: 0;
   left: 0;
 
@@ -94,6 +96,10 @@ body {
   padding: 10px;
 
   border-top: 2px solid #555;
+
+  max-height: 60%;
+
+  overflow-y: auto;
 }
 
 /* BOTONES */
@@ -105,4 +111,9 @@ button {
 .kbSection {
   display: none;
   margin-top: 10px;
+}
+#controls {
+  margin-top: 15px;
+  border-top: 1px solid #555;
+  padding-top: 10px;
 }
