@@ -1,4 +1,9 @@
 function toggleKeyboard() {
   let kb = document.getElementById("keyboard");
-  kb.style.display = kb.style.display === "block" ? "none" : "block";
+
+  if (kb.style.display === "block") {
+    kb.style.display = "none";
+  } else {
+    kb.style.display = "block";
+  }
 }
