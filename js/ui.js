@@ -7,3 +7,15 @@ function toggleKeyboard() {
     kb.style.display = "block";
   }
 }
+function showSection(id) {
+
+  let sections =
+    document.getElementsByClassName("kbSection");
+
+  for (let i = 0; i < sections.length; i++) {
+    sections[i].style.display = "none";
+  }
+
+  document.getElementById(id).style.display =
+    "block";
+}
