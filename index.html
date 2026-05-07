@@ -10,41 +10,55 @@
 
 <body>
 
-  <!-- Enunciado -->
-  <div id="top"></div>
+<body>
 
-  <!-- Desarrollo -->
-  <div id="work">
-    <div id="expression"></div>
+<div id="mainContainer">
 
-    <button onclick="toggleKeyboard()">
-      Teclado
-    </button>
+  <!-- PANEL IZQUIERDO -->
+  <div id="leftPanel">
+
+    <!-- ECUACIÓN -->
+    <div id="top"></div>
+
+    <!-- DESARROLLO -->
+    <div id="work">
+
+      <div id="expression"></div>
+
+      <button onclick="toggleKeyboard()">
+        Teclado
+      </button>
+
+      <!-- TECLADO -->
+      <div id="keyboard">
+
+        <button onclick="addSymbol('1')">1</button>
+        <button onclick="addSymbol('2')">2</button>
+        <button onclick="addSymbol('3')">3</button>
+
+        <button onclick="addSymbol('x')">x</button>
+
+        <button onclick="addSymbol('+')">+</button>
+        <button onclick="addSymbol('-')">-</button>
+
+        <button onclick="addSymbol('=')">=</button>
+
+        <button onclick="backspace()">⌫</button>
+
+        <button onclick="clearExpr()">C</button>
+
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- Plano -->
-  <div id="canvasContainer"></div>
-
-  <!-- Teclado -->
-  <div id="keyboard">
-
-    <button onclick="addSymbol('1')">1</button>
-    <button onclick="addSymbol('2')">2</button>
-    <button onclick="addSymbol('3')">3</button>
-
-    <button onclick="addSymbol('x')">x</button>
-
-    <button onclick="addSymbol('+')">+</button>
-    <button onclick="addSymbol('-')">-</button>
-
-    <button onclick="addSymbol('=')">=</button>
-
-    <button onclick="backspace()">⌫</button>
-
-    <button onclick="clearExpr()">C</button>
-
+  <!-- PANEL DERECHO -->
+  <div id="rightPanel">
+    <div id="canvasContainer"></div>
   </div>
 
+</div>
   <!-- Librería p5 -->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 
