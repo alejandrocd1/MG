@@ -1,15 +1,19 @@
 function setup() {
-  let canvas = createCanvas(window.innerWidth, window.innerHeight - 140);
-  canvas.parent(document.body);
+  let container = document.getElementById("canvasContainer");
 
-  // Rectas iniciales
-  line1 = [
-    { x: -2, y: -2 },
-    { x: 2, y: 2 }
-  ];
+  let canvas = createCanvas(
+    container.offsetWidth,
+    container.offsetHeight
+  );
 
-  line2 = [
-    { x: -2, y: 2.8 },
-    { x: 2, y: -0.8 }
-  ];
+  canvas.parent("canvasContainer");
+}
+
+function draw() {
+  background(20);
+
+  stroke(255);
+
+  line(width / 2, 0, width / 2, height);
+  line(0, height / 2, width, height / 2);
 }
