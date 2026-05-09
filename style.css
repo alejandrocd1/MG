@@ -117,3 +117,6 @@ button {
   border-top: 1px solid #555;
   padding-top: 10px;
 }
+.kbSection button {
+  min-width: 50px;
+}
