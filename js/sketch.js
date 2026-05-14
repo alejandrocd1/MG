@@ -23,6 +23,7 @@ function draw() {
 
   drawF();
 
+  drawG();
 }
 
 /* CUADRÍCULA */
@@ -57,7 +58,7 @@ function drawAxes() {
   line(0, -height, 0, height);
 }
 
-/* f(x)=x² */
+/* PARÁBOLA HACIA ARRIBA */
 
 function drawF() {
 
@@ -69,7 +70,7 @@ function drawF() {
 
   beginShape();
 
-  for (let x = -6; x <= 6; x += 0.05) {
+  for (let x = -5; x <= 5; x += 0.05) {
 
     let y = 0.35 * x * x;
 
@@ -81,23 +82,22 @@ function drawF() {
 
   endShape();
 
-  /* tendencia izquierda */
+  /* puntos infinitos */
+
   noStroke();
 
   fill(0,150,255);
 
-  circle(-215, -250, 4);
-  circle(-225, -270, 4);
-  circle(-235, -290, 4);
+  circle(-210, -210, 5);
+  circle(-220, -230, 5);
+  circle(-230, -250, 5);
 
-  /* tendencia derecha */
-
-  circle(215, -250, 4);
-  circle(225, -270, 4);
-  circle(235, -290, 4);
+  circle(210, -210, 5);
+  circle(220, -230, 5);
+  circle(230, -250, 5);
 }
 
-/* g(x)=-0.5x²+6 */
+/* PARÁBOLA HACIA ABAJO */
 
 function drawG() {
 
@@ -109,7 +109,7 @@ function drawG() {
 
   beginShape();
 
-  for (let x = -6; x <= 6; x += 0.05) {
+  for (let x = -5; x <= 5; x += 0.05) {
 
     let y = -0.18 * x * x + 5;
 
@@ -121,19 +121,17 @@ function drawG() {
 
   endShape();
 
-  /* tendencia izquierda */
+  /* puntos infinitos */
 
   noStroke();
 
   fill(255,100,100);
 
-  circle(-215, 55, 4);
-  circle(-225, 70, 4);
-  circle(-235, 85, 4);
+  circle(-210, 40, 5);
+  circle(-220, 55, 5);
+  circle(-230, 70, 5);
 
-  /* tendencia derecha */
-
-  circle(215, 55, 4);
-  circle(225, 70, 4);
-  circle(235, 85, 4);
+  circle(210, 40, 5);
+  circle(220, 55, 5);
+  circle(230, 70, 5);
 }
