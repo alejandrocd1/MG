@@ -21,16 +21,16 @@ function draw() {
 
   drawAxes();
 
-  drawF();
+  drawUpCurve();
 
-  drawG();
+  drawDownCurve();
 }
 
 /* CUADRÍCULA */
 
 function drawGrid() {
 
-  stroke(60);
+  stroke(50);
 
   strokeWeight(1);
 
@@ -51,16 +51,14 @@ function drawAxes() {
 
   strokeWeight(2);
 
-  // eje X
   line(-width, 0, width, 0);
 
-  // eje Y
   line(0, -height, 0, height);
 }
 
-/* PARÁBOLA HACIA ARRIBA */
+/* CURVA HACIA ARRIBA */
 
-function drawF() {
+function drawUpCurve() {
 
   stroke(0, 150, 255);
 
@@ -70,36 +68,38 @@ function drawF() {
 
   beginShape();
 
-  for (let x = -5; x <= 5; x += 0.05) {
+  for (let x = -4; x <= 4; x += 0.05) {
 
-    let y = 0.35 * x * x;
+    let y = 0.5 * x * x;
 
     vertex(
-      x * 40,
-      -y * 35
+      x * 35,
+      -y * 18
     );
   }
 
   endShape();
 
-  /* puntos infinitos */
+  /* tendencia izquierda */
 
   noStroke();
 
   fill(0,150,255);
 
-  circle(-210, -210, 5);
-  circle(-220, -230, 5);
-  circle(-230, -250, 5);
+  circle(-145, -120, 4);
+  circle(-155, -135, 4);
+  circle(-165, -150, 4);
 
-  circle(210, -210, 5);
-  circle(220, -230, 5);
-  circle(230, -250, 5);
+  /* tendencia derecha */
+
+  circle(145, -120, 4);
+  circle(155, -135, 4);
+  circle(165, -150, 4);
 }
 
-/* PARÁBOLA HACIA ABAJO */
+/* CURVA HACIA ABAJO */
 
-function drawG() {
+function drawDownCurve() {
 
   stroke(255, 100, 100);
 
@@ -109,29 +109,31 @@ function drawG() {
 
   beginShape();
 
-  for (let x = -5; x <= 5; x += 0.05) {
+  for (let x = -4; x <= 4; x += 0.05) {
 
-    let y = -0.18 * x * x + 5;
+    let y = -0.35 * x * x + 3;
 
     vertex(
-      x * 40,
-      -y * 30
+      x * 35,
+      -y * 18
     );
   }
 
   endShape();
 
-  /* puntos infinitos */
+  /* tendencia izquierda */
 
   noStroke();
 
   fill(255,100,100);
 
-  circle(-210, 40, 5);
-  circle(-220, 55, 5);
-  circle(-230, 70, 5);
+  circle(-145, 10, 4);
+  circle(-155, 20, 4);
+  circle(-165, 30, 4);
 
-  circle(210, 40, 5);
-  circle(220, 55, 5);
-  circle(230, 70, 5);
+  /* tendencia derecha */
+
+  circle(145, 10, 4);
+  circle(155, 20, 4);
+  circle(165, 30, 4);
 }
