@@ -1,6 +1,6 @@
 const ejercicios = [
   {
-    enunciado: "x < -0.9x + 1"
+    enunciado: "f(x) < g(x) "
   }
 ];
 
