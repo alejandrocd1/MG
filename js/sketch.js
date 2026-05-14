@@ -23,7 +23,6 @@ function draw() {
 
   drawF();
 
-  drawInfinityDots();
 }
 
 /* CUADRÍCULA */
@@ -70,24 +69,39 @@ function drawF() {
 
   beginShape();
 
-  for (let x = -5; x <= 5; x += 0.1) {
+  for (let x = -6; x <= 6; x += 0.05) {
 
-    let y = x * x;
+    let y = 0.35 * x * x;
 
     vertex(
       x * 40,
-      -y * 20
+      -y * 35
     );
   }
 
   endShape();
+
+  /* tendencia izquierda */
+  noStroke();
+
+  fill(0,150,255);
+
+  circle(-215, -250, 4);
+  circle(-225, -270, 4);
+  circle(-235, -290, 4);
+
+  /* tendencia derecha */
+
+  circle(215, -250, 4);
+  circle(225, -270, 4);
+  circle(235, -290, 4);
 }
 
 /* g(x)=-0.5x²+6 */
 
 function drawG() {
 
-  stroke(255, 80, 80);
+  stroke(255, 100, 100);
 
   strokeWeight(3);
 
@@ -95,41 +109,31 @@ function drawG() {
 
   beginShape();
 
-  for (let x = -5; x <= 5; x += 0.1) {
+  for (let x = -6; x <= 6; x += 0.05) {
 
-    let y = -0.5 * x * x + 6;
+    let y = -0.18 * x * x + 5;
 
     vertex(
       x * 40,
-      -y * 20
+      -y * 30
     );
   }
 
   endShape();
-}
-function drawInfinityDots() {
+
+  /* tendencia izquierda */
 
   noStroke();
 
-  fill(255);
+  fill(255,100,100);
 
-  /* PARÁBOLA HACIA ARRIBA */
+  circle(-215, 55, 4);
+  circle(-225, 70, 4);
+  circle(-235, 85, 4);
 
-  circle(-170, -190, 4);
-  circle(-180, -210, 4);
-  circle(-190, -230, 4);
+  /* tendencia derecha */
 
-  circle(170, -190, 4);
-  circle(180, -210, 4);
-  circle(190, -230, 4);
-
-  /* PARÁBOLA HACIA ABAJO */
-
-  circle(-170, 120, 4);
-  circle(-180, 140, 4);
-  circle(-190, 160, 4);
-
-  circle(170, 120, 4);
-  circle(180, 140, 4);
-  circle(190, 160, 4);
+  circle(215, 55, 4);
+  circle(225, 70, 4);
+  circle(235, 85, 4);
 }
