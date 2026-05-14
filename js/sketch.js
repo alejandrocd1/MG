@@ -113,17 +113,17 @@ function drawInfinityDots() {
 
   noStroke();
 
-  textSize(28);
+  textSize(24);
 
-  // superior izquierda
-  text("...", -170, -180);
+  // arriba izquierda
+  text("...", -120, -120);
 
-  // superior derecha
-  text("...", 140, -180);
+  // arriba derecha
+  text("...", 90, -120);
 
-  // inferior izquierda
-  text("...", -220, 220);
+  // abajo izquierda
+  text("...", -140, 140);
 
-  // inferior derecha
-  text("...", 170, 220);
+  // abajo derecha
+  text("...", 110, 140);
 }
