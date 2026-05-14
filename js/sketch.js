@@ -109,21 +109,27 @@ function drawG() {
 }
 function drawInfinityDots() {
 
-  fill(255);
-
   noStroke();
 
-  textSize(24);
+  fill(255);
 
-  // arriba izquierda
-  text("...", -120, -120);
+  /* PARÁBOLA HACIA ARRIBA */
 
-  // arriba derecha
-  text("...", 90, -120);
+  circle(-170, -190, 4);
+  circle(-180, -210, 4);
+  circle(-190, -230, 4);
 
-  // abajo izquierda
-  text("...", -140, 140);
+  circle(170, -190, 4);
+  circle(180, -210, 4);
+  circle(190, -230, 4);
 
-  // abajo derecha
-  text("...", 110, 140);
+  /* PARÁBOLA HACIA ABAJO */
+
+  circle(-170, 120, 4);
+  circle(-180, 140, 4);
+  circle(-190, 160, 4);
+
+  circle(170, 120, 4);
+  circle(180, 140, 4);
+  circle(190, 160, 4);
 }
