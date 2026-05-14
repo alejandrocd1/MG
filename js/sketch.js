@@ -23,7 +23,7 @@ function draw() {
 
   drawF();
 
-  drawG();
+  drawInfinityDots();
 }
 
 /* CUADRÍCULA */
@@ -106,4 +106,24 @@ function drawG() {
   }
 
   endShape();
+}
+function drawInfinityDots() {
+
+  fill(255);
+
+  noStroke();
+
+  textSize(28);
+
+  // superior izquierda
+  text("...", -170, -180);
+
+  // superior derecha
+  text("...", 140, -180);
+
+  // inferior izquierda
+  text("...", -220, 220);
+
+  // inferior derecha
+  text("...", 170, 220);
 }
