@@ -84,7 +84,7 @@ function drawUpCurve() {
 
   noStroke();
 
-  fill(0,150,255);
+fill(0,150,255);
 
 circle(-120, -90, 4);
 circle(-130, -105, 4);
@@ -133,7 +133,8 @@ function drawDownCurve() {
 
   noStroke();
 
-  fill(255,100,100);
+fill(255,100,100);
+  
 circle(-120, -5, 4);
 circle(-130, 5, 4);
 circle(-140, 15, 4);
