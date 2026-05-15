@@ -70,7 +70,7 @@ function drawUpCurve() {
 
   for (let x = -4; x <= 4; x += 0.05) {
 
-    let y = x * x;
+    let y = x * x +2;
 
     vertex(
       x * 35,
@@ -119,7 +119,7 @@ function drawDownCurve() {
 
   for (let x = -4; x <= 4; x += 0.05) {
 
-    let y = -0.2 * x * x + 4;
+    let y = -x * x + 4;
 
     vertex(
       x * 35,
