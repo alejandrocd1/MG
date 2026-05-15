@@ -86,15 +86,23 @@ function drawUpCurve() {
 
   fill(0,150,255);
 
-  circle(-145, -120, 4);
-  circle(-155, -135, 4);
-  circle(-165, -150, 4);
+  circle(-120, -90, 4);
+circle(-130, -105, 4);
+circle(-140, -120, 4);
+
+circle(120, -90, 4);
+circle(130, -105, 4);
+circle(140, -120, 4);
 
   /* tendencia derecha */
 
-  circle(145, -120, 4);
-  circle(155, -135, 4);
-  circle(165, -150, 4);
+  circle(-120, -90, 4);
+circle(-130, -105, 4);
+circle(-140, -120, 4);
+
+circle(120, -90, 4);
+circle(130, -105, 4);
+circle(140, -120, 4);
 }
 
 /* CURVA HACIA ABAJO */
@@ -126,14 +134,22 @@ function drawDownCurve() {
   noStroke();
 
   fill(255,100,100);
+circle(-120, -5, 4);
+circle(-130, 5, 4);
+circle(-140, 15, 4);
 
-  circle(-145, 10, 4);
-  circle(-155, 20, 4);
-  circle(-165, 30, 4);
+circle(120, -5, 4);
+circle(130, 5, 4);
+circle(140, 15, 4);
+  
 
   /* tendencia derecha */
 
-  circle(145, 10, 4);
-  circle(155, 20, 4);
-  circle(165, 30, 4);
+  circle(-120, -5, 4);
+circle(-130, 5, 4);
+circle(-140, 15, 4);
+
+circle(120, -5, 4);
+circle(130, 5, 4);
+circle(140, 15, 4);
 }
