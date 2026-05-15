@@ -70,7 +70,7 @@ function drawUpCurve() {
 
   for (let x = -4; x <= 4; x += 0.05) {
 
-    let y = x * x +2;
+    let y = x * x - 2 ;
 
     vertex(
       x * 35,
