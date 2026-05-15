@@ -86,7 +86,7 @@ function drawUpCurve() {
 
   fill(0,150,255);
 
-  circle(-120, -90, 4);
+circle(-120, -90, 4);
 circle(-130, -105, 4);
 circle(-140, -120, 4);
 
@@ -96,7 +96,7 @@ circle(140, -120, 4);
 
   /* tendencia derecha */
 
-  circle(-120, -90, 4);
+circle(-120, -90, 4);
 circle(-130, -105, 4);
 circle(-140, -120, 4);
 
@@ -145,7 +145,7 @@ circle(140, 15, 4);
 
   /* tendencia derecha */
 
-  circle(-120, -5, 4);
+circle(-120, -5, 4);
 circle(-130, 5, 4);
 circle(-140, 15, 4);
 
